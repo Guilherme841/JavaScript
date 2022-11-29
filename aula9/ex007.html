@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo DOM</title>
+    
+    <style>body{background-color: gray;
+    color: rgb(247, 247, 168);}
+    body{font: 18pt Arial;}
+
+    </style>
+</head>
+<body>
+     <h1>Iniciando DOM</h1>
+    <p>aqui vai o resultado</p>
+    <p>Apredendo usar o <strong>DOM</strong> em JS.</p>
+    <div id ="msg">Clique em mim</div>
+
+    <script>
+        document.write(window.document.charset)
+        document.write(`</br>`)
+        document.write(window.navigator.appName)
+        document.write(`</br>`)
+        document.write(window.document.URL)  
+        
+        //var corpo = window.document.body
+        //corpo.style.background = 'black'
+        var p1 = window.document.getElementsByTagName('p')[1] // getElementsByTagName accessa todos os componentes
+        document.write(`</br>`)
+        //document.write('Está escrito isso no primeiro paragrafo : ' + p1.innerText)
+        p1.style.color =  'black'
+        //window.alert(p1.innerHTML)[1]
+        //var div = document.getElementById('msg')
+        //div.style.background = 'black'
+        //div.innerText = ('estou aguardando') // simplificado
+        //window.document.getElementById('msg') .innerText = ('Olá ') // mesmo comando de cima, só não compacto. 
+        //var div = window.document.getElementsByName('msg')[0]
+        //div.style.color = 'black'
+        //div.innerText = ('Funciona?')
+        //var div = window.document.getElementsByClassName('msg')[0]
+        //div.style.color = 'aqua'
+        //div.innerText = ('Mudando')
+        var div = window.document.querySelector('div#msg') // # representa id , e . representa classe
+        div.innerText = ('Olá')
+        div.style.color = 'black'
+        div.style.background = 'green'
+
+        
+
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,12 @@
+body{
+    text-align: center;
+    background-color: beige;
+}
+section{
+    background-color: pink;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.356)
+} 
+footer{
+    font-style: italic;
+}

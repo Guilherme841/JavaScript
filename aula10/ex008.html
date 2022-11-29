@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#tecla {background-color: green;
+        color: rgb(255, 255, 255);
+    font: normal 15pt Arial; 
+width: 200px;
+height: 200px;
+line-height: 200px; 
+text-align: center;
+}
+    </style>
+</head>
+<body> 
+  <div id="tecla">
+
+  </div>
+<script>
+
+var tecla = window.document.getElementById('tecla')
+tecla.addEventListener('click', clicar)  
+tecla.addEventListener('mouseenter', entrar)
+tecla.addEventListener('mouseout', sair) 
+
+function clicar()
+
+{  
+    tecla.innerText = 'clicou!'
+    tecla.style.background = 'red'
+    document.body.style.background = 'black'
+
+}
+function entrar() {
+    tecla.innerText = 'entrou'
+    tecla.style.background = 'green'
+}
+function sair() {
+    
+    tecla.innerText = 'saiu'
+    tecla.style.background = 'green'
+}
+</script>
+   
+    
+</body>
+</html>

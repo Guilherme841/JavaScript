@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <input type="number" name="numero" id="numero">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="foto">
+      
+    </div>
+    <script>
+        function verificar() {
+            let numero = document.getElementById('numero')
+            let number = Number(numero.value)
+            let imag = document.getElementById('foto')
+            if (number < 10) {
+                imag.innerHTML = '<img style="border-radius:50%" width="250px" heigth="250px" src="makima.png">'
+            }
+        }
+    </script>
+</body>
+</html>

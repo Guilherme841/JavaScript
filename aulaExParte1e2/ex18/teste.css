@@ -1,0 +1,22 @@
+body{
+    font: normal 15pt Arial;
+    text-align: center;
+}
+section {
+    width: 500px;
+    height: 400px;
+    background-color: pink;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
+    margin: auto;
+}
+footer {
+    padding: 40px;
+    font-style: italic;
+} 
+div#hora{
+    padding: 30px;
+} 
+div#saudar {
+    padding: 15px;
+}

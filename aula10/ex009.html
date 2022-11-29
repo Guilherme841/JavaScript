@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interações/somando números</title>
+</head>
+<style> body{background-color: beige;
+font: normal 18 pt Arial;
+color: violet;
+}
+input {
+    font: normal 15pt Arial;
+    width: 60px;
+    height: 30px;}
+    div#resu {
+        margin-top: 10px;
+        font: normal 15pt Arial;
+    }
+  
+
+</style>
+<body>
+<h1><strong>Somando valores</strong></h1>
+<input type="number" name="valor" id="valor"> +
+<input type="number" name="valor2" id="valor2">
+<input type="button" value="somar" onclick="somar()"
+>
+ <div id="resu"> RESULTADO
+ </div>  
+   <script>
+function somar(){
+    var valor  = window.document.getElementById('valor')
+    var valor2 = window.document.querySelector('input#valor2')
+    var resu = window.document.getElementById('resu')
+    var val = Number (valor.value)
+    var val2 = Number (valor2.value)
+    var soma = val + val2
+    resu.innerHTML = soma
+
+    
+}
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

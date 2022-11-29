@@ -1,0 +1,21 @@
+body {
+    font: Normal 18pt Arial;
+}
+header {
+    text-align: center;
+}
+section {
+    margin: auto;
+    width: 500px;
+    height: 400px;
+    background-color: pink;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.425);
+    padding: 10px;
+}
+footer {
+    text-align: center;
+}
+#tabuada {
+    overflow: hidden;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros comandos...</title>
+    <style>
+       body {background-color: rgb(0, 162, 255);
+            color: rgb(0, 0, 0);
+             font: normal 20pt Arial;
+            }
+            h1 {color: rgb(0, 0, 0)}
+            #numero1{
+                width: 35px;
+            }
+            #numero2 {
+                width: 35px;
+            }
+            #resultado{
+                background-color: gray;
+                border-radius: 10px;
+                padding: 4px;
+                width: 205px;
+                text-align: right;
+            }
+
+    </style>
+</style>
+<body>
+    <h1>Calculadora</h1>
+    <p></p>
+    <div id="resultado">0</div>
+    <input type="number" name="numero1" id="numero1">
+    <input type="number" name="numero2" id="numero2">
+    <input type="button" value="+" onclick="somar()">
+    <input type="button" value="÷" onclick="dividir()">
+    <input type="button" value="x" onclick="multiplicar()">
+    <input type="button" value="-" onclick="subtrair()">
+    <script>
+        function somar(){
+            let numero1 = window.document.getElementById('numero1')
+            let numero2 = window.document.getElementById('numero2')
+            if (numero1.value.length == 0 || numero2.value.length == 0) {
+                alert('[ERRO]')
+            }
+            let number1 = Number(numero1.value)
+            let number2 = Number(numero2.value)
+            let soma = number1 + number2
+            let resultado = document.querySelector('div#resultado')
+            resultado.innerHTML = `${soma}`
+        }
+        function dividir(){
+            let nume1 = window.document.getElementById('numero1')
+            let nume2 = window.document.getElementById('numero2')
+            if (nume1.value.length == 0 || nume2.value.length == 0) {
+                window.alert('[ERRO]')
+                rusu.innerHTML = ''
+            }
+            let nu1 = Number(nume1.value)
+            let nu2 = Number(nume2.value)  
+            let divisao= nu1 / nu2
+            let resu = document.querySelector('div#resultado')
+            resu.innerHTML = `${divisao.toFixed(2)}`
+        }
+        function multiplicar() {
+            let number1 = window.document.getElementById('numero1')
+            let number2 = window.document.getElementById('numero2')
+            if (number1.value.length == 0 || number2.value.length == 0) {
+                alert('[ERRO]')
+            }
+            let numb1 = Number(number1.value)
+            let numb2 = Number(number2.value)
+            let multiplicaçao = numb1 * numb2
+            let resultado = document.getElementById('resultado')
+            resultado.innerHTML = `${multiplicaçao}`
+            
+
+        }
+        function subtrair(){
+            let numero1 = window.document.getElementById('numero1')
+            let numero2 = window.document.getElementById('numero2')
+            if (numero1.value.length == 0 || numero2.value.length == 0) {
+                alert('[ERRO]')
+            }
+            let number1 = Number(numero1.value)
+            let number2 = Number(numero2.value)
+            let menos = number1 - number2
+            let resultado = document.getElementById('resultado')
+            resultado.innerHTML = `${menos}`
+        }
+        
+
+
+        //window.alert('primeiro comando de JavaScript') // alerta
+        //window.confirm('Estou fazendo o passo a passo') // ok e cancel
+    /*var n1 = Number(window.prompt('digite um número '))
+    var n2 = Number(window.prompt('digite outro número '))
+    var soma = n1 + n2 // + pra adição e concatenação
+    document.write(`${n1} + ${n2} = ${soma}`)*/
+    </script>
+</body>
+</html>

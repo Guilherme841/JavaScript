@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 14</title>
+</head>
+<body>
+    <input type="number" name="year" id="year">
+    <input type="button" value="vericar" onclick="calcular()">
+    <div id="ye"></div>
+    <script>
+function calcular () {
+var idade = window.document.getElementById('year')
+var yer = window.document.getElementById('ye')
+var y = (idade.value)
+yer.innerHTML = `<p>Você tem ${idade.value} anos.<p>`
+if (idade.value < 16) {
+    yer.innerHTML += 'Não vota!'
+} else if (idade.value < 18 || idade.value > 65) 
+    yer.innerHTML += 'Voto opcional!'
+  else 
+    yer.innerHTML += 'Voto obrigatório'
+
+}        
+        
+
+    </script>
+    
+</body>
+</html>

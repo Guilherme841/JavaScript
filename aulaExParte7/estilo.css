@@ -1,0 +1,21 @@
+body{
+    background-color: beige;
+    font: normal 15pt Arial;
+}
+section{
+    background-color: pink;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.356);
+    padding: 10px;
+    margin: auto;
+    width: 500px
+} 
+footer{
+    font-style: italic;
+}
+select {
+    width: 130px;
+}
+header {
+    text-align: center;
+}
