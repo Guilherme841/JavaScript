@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 3</title>
+</head>
+<body>
+    <script>
+
+        // Arrays (Spread: uma forma de lidar separadamente com elementos.)  sintaxe de (...)
+
+        function sum (a, y, z ) {
+            return a + y + z; 
+        }                               // o que era parte de um array se torna um elemento independente.
+
+        const numbers = [1,4,6];  
+        console.log(sum(...numbers));
+
+        // Arrays (rest: combina os argumentos em um array.)
+
+        function confereTamanho(...args) {
+            console.log(args.length)
+        }
+        confereTamanho() // 0
+        confereTamanho(1,2) // 2 
+        confereTamanho(3,4,5) // 3
+
+        // Objects destructuring
+
+        const user = {
+            id: 42,
+            displayName: 'jDoe',
+            fullName: {
+                firstName: 'John',
+                lastName: 'Doe'
+            } 
+        }; 
+
+        function userId({id}) {
+            return id; 
+        }
+
+        function getFullName({fullName : {firstName: first, lastName: last}}) {
+            return `${first} e ${last}`;
+        }
+
+        userId(user) // 42
+        getFullName(user) // John Doe
+    </script>
+</body>
+</html>

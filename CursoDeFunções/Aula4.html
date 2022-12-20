@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4</title>
+</head>
+<body>
+    <script>
+        function numeroPositivo(num) {
+            let resultado;
+            if (num < 0) {
+                resultado = false;
+            } else {
+                resultado = true;
+            }
+            return resultado;
+        }
+            numeroPositivo(2)
+            // true
+            numeroPositivo(-9)
+            // false
+
+        // Forma 2 (condição em uma variavel)
+
+        function numeroPositivo(num) {
+            let resultado;
+            const ehNegativo = num < 0 ;
+            if(ehNegativo) {
+                resultado = false;
+            } else {
+                resultado = true;
+            }
+            return resultado;
+        }
+
+        // Forma 3 (Sem a variavel resultado e sem o (else).)
+
+        function numeroPositivo(num) {
+            const ehNegativo = num < 0 ;
+            if(ehNegativo) {
+                return false;
+            }
+            return true;
+        }
+
+        // If/else (aninhado)
+
+        function numeroPositivo(num) {
+            const ehNegativo = num < 0;
+            const maiorQueDez = num > 10;
+            if(ehNegativo) {
+                return "Esse número é negativo!";
+            } else if (!ehNegativo && maiorQueDez) {
+                return "Esse número é positivo e maior que 10!"
+            }
+                return "Esse número é positivo!";
+            // numeroPositivo(2)
+            // "Esse número é positivo!"
+            // numeroPositivo(-2)
+            // "Esse número é negativo!"
+            // numeroPositivo(40)
+            // "Essë número é positivo e maior que 101"
+        }
+
+        // Switch/Case
+        // - equivale a uma comparação de tipo e valor (===)
+        // - Sempre precisa de um valor "default"
+        // - Ideal para quando se precisa comparar muitos valores 
+        function getAnimal(id) {
+            switch (id) {
+                case 1:
+                    return 'Cão';
+                case 2:
+                    return 'Gato';
+                case 3:
+                    return 'Pássaro';
+                default:
+                    return 'Peixe';
+            }
+        }
+        // getAnimal(1) Cão 
+        // getAnimal(2) Gato 
+        // getAnimal("1") Peixe   
+
+    </script>
+</body>
+</html>

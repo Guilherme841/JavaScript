@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1</title>
+</head>
+<body>
+    <script>
+        // estrutura de uma função
+
+        function nome(parametros) {
+            //intruções
+            return; // valor de retorno
+        }
+
+        // função anonima 
+
+        const soma = function (a, b) {
+            return a + b;
+        }
+
+        soma(2,5) // 7
+        soma(5,5) // 10
+
+        // função autoinvocavel ,IIFE (Immediately Invoked Function Expression)
+
+        (
+            function () {                           //Uma função anônima entre
+                let name = "Digital Innovation One" //parênteses ,seguida por
+                return name;                        //outro par de parênteses,
+            }                                       //que representa sua chamada
+        )();
+
+        (
+            function (a, b) {                           
+                return a + b;                       
+            }                                       
+        )(2,2);
+
+        const soma3 = (
+            function (a, b) {                           
+                return a + b;                       
+            }                                       
+        )(2,2);
+
+        console.log(soma3)
+
+        // Callbacks (Uma função passada como argumento para outra.)
+
+        const calc = function(operaçao, num1, num2) {
+            return operaçao(num1 + num2);
+        }
+
+        const somaa = function(num1, num2) {
+            return num1 + num2;
+        }
+
+        const sub = function(num1, num2) {
+            return num1 - num2;
+        }
+
+        const resultsoma = calc(somaa, 2,2);
+        const resultsub = calc(sub, 5, 3);
+    </script>
+</body>
+</html>

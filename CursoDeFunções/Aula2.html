@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2</title>
+</head>
+<body>
+    <script>
+
+        // valor padrão do parâmetro
+
+        function exponensial(array, num = 1) {
+            const result = [];
+            for(let i = 0; i < array.length; i++) {
+                result.push(array[i] ** num);
+            }
+            return result; 
+        }
+        exponensial([1,2,3,4])
+        exponensial([1,2,3,4],4)
+
+        // Arguments
+
+        function findMax() {
+            let max = -Infinity;
+            for(let i = 0; i < arguments.length; i++) { // Um array com todos os parâmetros passados quando a função foi chamada.
+                if (arguments[1] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+    </script>
+</body>
+</html>
