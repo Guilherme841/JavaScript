@@ -1,0 +1,13 @@
+Functions (Checked)
+
+Objetos 
+
+Modularização 
+
+RegEx 
+
+JSON 
+
+AJAX 
+
+NodeJS 
