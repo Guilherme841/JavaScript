@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6</title>
+</head>
+<body>
+    <script>
+
+        // This 
+        // A plavra reservada this é uma referência de contexto.
+        // no exemplo, this refere-se ao objeto pessoa.
+
+        const pessoa = {
+            firstName: "André",
+            lastName: "Soares",
+            id : 1,
+            fullName : function() {
+                return this.firstName + " " + this.lastName;
+            }, 
+            getId: function() {
+                return this.id;
+            }
+        };
+        pessoa.fullName();
+        // "André Soares"
+        pessoa.getId();
+        // 1
+
+        // This: o que é
+        // Seu valor pode mudar de acordo com o lugar no código onde foi chamada.
+        
+         // Contexto | Referência 
+         // Em um objeto(método) | Próprio objeto dono do método
+         // Sozinha | Objeto global( em navegadores, window)
+         // Função | Objeto global
+         // Evento | Elemento que recebeu o evento
+
+         
+    </script>
+</body>
+</html>

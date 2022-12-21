@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7</title>
+</head>
+<body>
+    <script>
+
+        // Manipulando valor do this
+        // método call 
+
+        const pessoa = {
+            nome: 'Miguel',
+        };
+
+        const animal = {
+            nome: 'Murphy',
+        }; 
+
+        function getSomething() {
+            console.log(this.nome);
+        }
+
+        getSomething.call(pessoa);
+        // Miguel
+        getSomething.call(animal);
+        // Murphy
+
+        // Call
+        // é possivel passar parâmetros para essa função seperando-os por vírgulas. 
+
+        const myObj = {
+            num1: 2,
+            num2: 4,
+        };
+
+        function soma(a , b) {
+            console.log(this.num1 + this.num2 + a + b);
+        }
+        soma.call(myObj, 1, 5);
+        // 12
+
+        // Função apply
+        // É possível passar parâmetros para essa função dentro de um array.
+
+        const pessoa2 = {
+            nome: 'Miguel2',
+        };
+
+        const animal2 = {
+            nome: 'Godi',
+        };
+
+        function getSomething2() {
+            console.log(this.nome);
+        }
+
+        getSomething2.apply(pessoa2);
+
+        const myObj2 = {
+            num1: 2,
+            num2: 4,
+        };
+
+        function soma(a , b) {
+            console.log(this.num1 + this.num2 + a + b);
+        }
+        soma.call(myObj2, [1, 5]);
+        // 12
+
+        // Bind 
+        // clona a estrutura da função onde é chamada e aplica o valor do objeto passado como parâmetro.
+
+        const retornaNomes = function() {
+            return this.nome;
+        };
+
+        let bruno = retornaNomes.bind({nome : 'bruno'});
+
+        bruno();
+        // Bruno 
+    </script>
+</body>
+</html>
