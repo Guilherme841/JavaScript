@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2</title>
+</head>
+<body>
+    
+    <script>
+
+        // Protótipos
+        // "todos os objetos em JavaScript herdam propriedades e métodos de um prototype."
+        // "O objeto Object.prototype está no topo desta cadeia."
+
+        // Classes
+        // Syntatic sugar: uma sintaxe feita para facilitar a escrita
+
+
+        // OLD
+        var Meal = function(food) {
+            this.food = food
+        }
+
+        Meal.prototype.eat = function() {
+            return '😋'
+        }
+
+        // NEW
+        class Meal {
+            constructor (food) {
+                this.food = food
+            }
+
+            eat() {
+                return '😋'
+            }
+        }
+
+        // Classes
+        // JavaScript não possui classes nativamente. Todas as classes são objetos e a herança se dá por protótipos.
+
+    </script>
+
+</body>
+</html>
