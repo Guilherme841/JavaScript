@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1</title>
+</head>
+<body>
+    <script>
+
+        // O que são módulos
+        // Módulos arquivos JavaScript que tem a capacidade de exportar e importar informações de outros arquivos do mesmo tipo.
+
+        // Algumas vantagens são:
+        // - Organização do código;
+        // - Compartilhamento de variáveis em escopos diferentes;
+        // - Explicita as dependência dos arquivos.
+
+
+        // Exportar
+        // Named exports | quando quiser exportar mais de uma coisa 
+
+        export function mostraIdade(pessoa) {
+            return `A idade de ${pessoa.nome} é ${pessoa.idade}`;
+        }
+
+        // Ou 
+
+        function mostraIdade(pessoa) {
+            return `A idade de ${pessoa.nome} é ${pessoa.idade}`;
+        }
+
+        export {
+            mostraIdade
+        }
+
+        // Default exports
+        // - Só pode haver um por arquivo;
+        // - Será o retorno padrão do seu arquivo.
+
+        function mostraIdade(pessoa) {
+            return `A idade de ${pessoa.nome} é ${pessoa.idade}`;
+        }
+
+        export {
+            mostraIdade
+        }
+
+        export default mostraIdade;
+
+        // Importar
+        // Named exports
+
+        import {funcao, variavel, classe} from './arquivo.js';
+
+        // Default exports
+
+        import valorDefault from './arquivo.js';
+
+        // Trocando nome de importes 
+
+        import {arquivo as apelido} from './arquivo.js';
+        apelido.metodo();
+
+        // Importando tudo
+
+        import * as apelido from './arquivo.js';
+        apelido.metodoA();
+        console.log(apelido.variavel);
+
+        // Vinculando ao html 
+        // - Atributo type no <script type="module" src="./main.js"><script>
+    </script>
+</body>
+</html>
