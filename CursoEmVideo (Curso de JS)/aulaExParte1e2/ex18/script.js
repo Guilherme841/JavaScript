@@ -1,7 +1,7 @@
 function carregar(){
 
     const msg = window.document.getElementById('hora')
-   let img = window.document.getElementById('fot')
+    let img = window.document.getElementById('fot')
     const data = new Date()
     const hora = data.getHours()
     const minutos = data.getMinutes() 

@@ -1,15 +1,15 @@
-var numero = document.querySelector("#numero")
-var resu = document.querySelector("#resu")
-var select = document.getElementById('select')
-var cases = []
+var numero = document.querySelector('input#numero')
+var select = document.querySelector('select#select')
+var resu = document.querySelector('div#resu')
+var valores = []
 function isnumber(n) {
     if (Number(n) >= 1 && Number(n) <= 100) {
-        return true 
+        return true
     } else {
-        return false 
+        return false
     }
 }
-function inlist(n,l) {
+function inlista(n,l) {
     if (l.indexOf(Number(n)) != -1) {
         return true
     } else {
@@ -17,40 +17,37 @@ function inlist(n,l) {
     }
 }
 function adicionar() {
-    if (isnumber(numero.value) && !inlist (numero.value,cases)) {
-        cases.push(Number(numero.value))
-        var item = document.createElement('option')
-        item.text = `${numero.value} adicionado!`
+    if (isnumber(numero.value) && !inlista(numero.value,valores)) {
+        valores.push(Number(numero.value))
+        let item = document.createElement('option')
+        item.text = `Valor ${numero.value} adicionado!`
         select.appendChild(item)
-        //resu.innerHTML = ''
-    } else {
-        alert('[ERRO]')
-    }
-    numero.focus()
-    //resu.innerHTML = ''
-}
-function finalizar() {
-    if (cases.length == 0) {
-        alert('[ERRO]')
-    } else {
-        var tot = cases.length
-        var maior = cases[0]
-        var menor = cases[0]
-        var soma = 0
-        var media = 0
-        for (let pos in cases) {
-            soma += cases[pos]
-            if (cases[pos] > maior)
-            maior = cases[pos]
-            if (cases[pos] < menor)
-            menor = cases[pos]
-            media = soma / tot
-        }
-    }
-    resu.innerHTML += `<p>${tot}<p>`
-    resu.innerHTML += `<p>${soma}<p>`
-    resu.innerHTML += `<p>${maior}<p>`
-    resu.innerHTML += `<p>${menor}<p>`
-    resu.innerHTML += `<p>${media}<p>`
-    //resu.innerHTML += `<p>${soma}<p>`
+        resu.innerHTML = ''
+    } 
 } 
+function finalizar() {
+    if (valores.length == 0) {
+        alert('[ERRO]')
+    } else {
+        let tot = valores.length
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+        let media = 0
+        for (let pos in valores) {
+            soma += valores[pos]
+            if (valores[pos] > maior) 
+            maior = valores[pos] 
+            if (valores[pos] < menor) 
+            menor = valores[pos] 
+        }
+        media = soma / tot
+        resu.innerHTML += ''
+        resu.innerHTML += `<p>Ao todo temos ${tot} números cadastrados!<p>` 
+        resu.innerHTML += `<p>O maior numero é ${maior}!<p>` 
+        resu.innerHTML += `<p>O menor numero é ${menor}!<p>` 
+        resu.innerHTML += `<p>A soma de todos é ${soma}!<p>` 
+        resu.innerHTML += `<p>A media é ${media.toFixed(2)}!<p>` 
+
+    }
+}
