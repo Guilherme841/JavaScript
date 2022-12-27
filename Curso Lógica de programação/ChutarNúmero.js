@@ -7,7 +7,7 @@
 // console.log(aleatorio(0,10));
 
 function aleatorio (min = 0, max = 10) {
-    var numero = Math.random() * (max - min) + min
+    let numero = Math.random() * (max - min) + min
     random = numero.toFixed(0)
 }
 
