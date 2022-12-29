@@ -1,5 +1,0 @@
-let idades = [2,2,2,2,2]
-
-for(let total = 0; total < idades.length; total + idades) {
-    console.log(total)
-}
