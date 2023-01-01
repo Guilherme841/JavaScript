@@ -1,0 +1,24 @@
+[
+    {
+    "nome": "Guilherme",
+    "idade": 18,
+    "esta_trabalhando": false,
+    "detalhes_profissao": {
+        "profissao": "front-end",
+        "experiencia": "5 anos",
+        "formação": "autodidata"
+    },
+    "hobbies": ["Jogar", "Estudar", "ler mangas"]
+    },
+    {
+    "nome": "Guilherme",
+    "idade": 18,
+    "esta_trabalhando": false,
+    "detalhes_profissao": {
+        "profissao": "front-end",
+        "experiencia": "5 anos",
+        "formação": "autodidata"
+    },
+    "hobbies": ["Jogar", "Estudar", "ler mangas"]
+}
+]
