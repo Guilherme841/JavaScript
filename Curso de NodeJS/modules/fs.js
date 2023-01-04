@@ -27,3 +27,12 @@ fs.appendFile(path.join(__dirname, '/teste2', 'teste2.html') ,' Hello world!', (
 
     console.log('Adicionado com sucesso')
 }) 
+
+// Ler aquivos
+
+fs.readFile(path.join(__dirname , '/Teste2', 'teste2.html'), "UTF-8", (error,data) => {
+    if (error) {
+        return console.log('Erro, ', error)
+    }
+    console.log(data)
+})
