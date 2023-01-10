@@ -1,4 +1,4 @@
-const BASE_URL = 'https://thatcopy.pw/catapi/rest/'
+const BASE_URL = 'http://api/users?page=2'
 const gato = window.document.getElementById('cat')
 const change_cat = window.document.getElementById('change-cat')
 
@@ -7,7 +7,7 @@ const getCats = async () => {
         const data = await fetch(BASE_URL);
         const json = await data.json();
 
-        return json.webpurl; 
+        return json.avatar; 
     } catch (error) {
         console.log(error.message);
     }
