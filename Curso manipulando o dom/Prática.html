@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site dark-mode</title>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Roboto', sans-serif;
+        }
+        body, html{
+            background-color: black;
+        }
+        main,body, html {
+            height: 100vh;
+        }
+        main {
+           display: flex;
+           background-color: white;
+        }
+        .container {
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+        }
+        #modo {
+            padding: 0px 0px 20px;
+            font-size: 2.5em;
+            font-weight: normal;
+        }
+        #botao {
+            display: block;
+            margin: auto;
+            outline: 0;
+            border: 0px;
+            border-radius: 25px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.616);
+            padding: 10px 20px;
+            font-size: 1.3em;
+            transition: .5s;
+        }
+        #botao:hover {
+            background-color: black;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main id="fundo">
+        <div class="container">
+            <h1 id="modo">Light Mode ON</h1>
+            <button id="botao">Dark Mode</button>
+        </div>
+    </main>
+    <script>
+
+        const main = document.getElementsByTagName('main')[0];
+        const h1 = document.getElementById('modo');
+        const botao = document.getElementById('botao');
+
+        botao.addEventListener('click', mudarModo);
+
+        function mudarModo() {
+            mudarClasse();
+            mudarTexto();
+        }
+
+        function mudarClasse() {
+            main.classList.toggle('dark-mode')
+            main.style.transition = 'background-color .5s'
+            if (main.classList.contains('dark-mode')) {
+                main.style.backgroundColor = 'black';
+                h1.style.color = 'white'
+                botao.style.backgroundColor = 'white'
+                botao.style.color = 'black'
+            } else {
+                main.style.backgroundColor = 'white';
+                h1.style.color = 'black'
+                botao.style.backgroundColor = 'black'
+                botao.style.color = 'white'
+            }
+        }
+
+        function mudarTexto() {
+            if (main.classList.contains('dark-mode')) {
+                h1.innerHTML = 'Dark Mode ON'
+                botao.innerHTML = 'Light Mode'
+            } else {
+                h1.innerHTML = 'Light Mode on'
+                botao.innerHTML = 'Dark Mode'
+            }
+        }
+    </script>
+</body>
+</html>
