@@ -1,4 +1,4 @@
-const BASE_URL = 'http://api/users?page=2'
+const BASE_URL = 'https://reqres.in/api/users?page=2'
 const gato = window.document.getElementById('cat')
 const change_cat = window.document.getElementById('change-cat')
 
@@ -14,7 +14,7 @@ const getCats = async () => {
 }
 
 const loadImg = async () => {
-    gato.src = await getCats(); 
+    gato.src = await getCats();
 }
 
 change_cat.addEventListener('click', loadImg);
