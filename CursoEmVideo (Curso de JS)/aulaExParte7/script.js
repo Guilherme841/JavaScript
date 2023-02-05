@@ -42,7 +42,7 @@ function finalizar() {
             menor = valores[pos] 
         }
         media = soma / tot
-        resu.innerHTML += ''
+        resu.innerHTML = ''
         resu.innerHTML += `<p>Ao todo temos ${tot} números cadastrados!<p>` 
         resu.innerHTML += `<p>O maior numero é ${maior}!<p>` 
         resu.innerHTML += `<p>O menor numero é ${menor}!<p>` 

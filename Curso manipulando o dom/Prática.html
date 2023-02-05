@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-    <main id="fundo">
+    <main class="fundo">
         <div class="container">
             <h1 id="modo">Light Mode ON</h1>
             <button id="botao">Dark Mode</button>
@@ -61,7 +61,7 @@
     </main>
     <script>
 
-        const main = document.getElementsByTagName('main')[0];
+        const main = document.querySelector('.fundo');
         const h1 = document.getElementById('modo');
         const botao = document.getElementById('botao');
 
