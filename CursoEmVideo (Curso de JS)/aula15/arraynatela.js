@@ -1,4 +1,4 @@
-let valores = [8,7,4,5,2,3,1]
+let valores = [2,2,2,2,2]
 let soma = 0; 
 //console.log(valores)
 /*for (let valor =0; valor < valores.length; valor++) {

@@ -1,12 +1,12 @@
 async function resolvePromise() {
     const myPromise = new Promise((resolve, reject) => {
         window.setTimeout(() => {
-            resolve('resolvida!');
+            alert('resolvida!');
         }, 3000);
     })
 
     const resolved = await myPromise
-    .then((result) => result + 'Passando pelo then')
+    .then((result) => result + 'passando pelo then')
     .then((result) => result + 'ultimo then e ok')
     .catch((error) => console.log(error.message))
 

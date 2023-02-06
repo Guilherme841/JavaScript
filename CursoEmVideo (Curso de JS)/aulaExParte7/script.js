@@ -9,7 +9,7 @@ function isnumber(n) {
         return false
     }
 }
-function inlista(n,l) {
+function inlista(n, l) {
     if (l.indexOf(Number(n)) != -1) {
         return true
     } else {
@@ -35,7 +35,7 @@ function finalizar() {
         let soma = 0
         let media = 0
         for (let pos in valores) {
-            soma += valores[pos]
+            soma += valores[pos];
             if (valores[pos] > maior) 
             maior = valores[pos] 
             if (valores[pos] < menor) 
