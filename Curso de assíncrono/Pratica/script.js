@@ -7,7 +7,6 @@ const getCats = async () => {
     const data = await fetch(BASE_URL);
     const json = await data.json();
     const avatares = json.data.map(item => item.avatar);
-    console.log(avatares)
     return avatares;
   } catch (error) {
     console.log(error.message);

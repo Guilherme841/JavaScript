@@ -13,7 +13,6 @@ class contaBancaria {
     set saldo(valor) {
         this._saldo = valor;
     }
-
     sacar(valor) {
         if (valor > this._saldo) {
             return 'Negado'
@@ -29,7 +28,7 @@ class contaBancaria {
         return this._saldo;
     }
 }
-
+      // filha                mae
 class contaCorrente extends contaBancaria {
     constructor(agencia, numero,cartaoCredito) {
         super(agencia,numero);
@@ -67,3 +66,4 @@ class contaUniversitaria extends contaBancaria {
         this._saldo = this._saldo - valor;
     }
 }
+

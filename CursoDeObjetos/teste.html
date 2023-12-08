@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap");
+
+      :root {
+        --primary-color: #1a237e;
+        --secundary-color: #3f51b5;
+        --shadow-color: #ccc;
+        --text-color: #fff;
+      }
+
+      /* Seletor Global */
+      * {
+        margin: 0; /* margem */
+        padding: 0; /* espacamento */
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+      }
+
+      body {
+        width: 100%;
+        min-height: 100vh;
+        background: radial-gradient(circle, #3f51b5, #1a237e);
+        display: flex;
+        justify-content: center;
+      }
+
+      main {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+      }
+
+      section {
+        width: 90%;
+        background: #fff;
+        margin: 0 1rem;
+        padding: 0 1.5rem;
+        box-shadow: 0 0 3px #fff;
+      }
+
+      h1 {
+        margin: 0.5rem;
+        font-size: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      h1::before {
+        content: " ";
+        position: absolute;
+        width: 25px;
+        height: 5px;
+        bottom: 3px;
+        background: linear-gradient(45deg, #9fa8da, #1a237e);
+      }
+
+      /* formatar formulario */
+      form {
+        width: 100%;
+      }
+
+      label {
+        display: block; /* none */
+      }
+
+      input {
+        outline: none;
+        margin: 0.5rem 0 1rem 0;
+        padding: 0.75rem;
+        position: relative;
+
+        width: 100%;
+        border: 1px solid #ececec;
+        border-bottom: 2px solid #ececec;
+        border-radius: 5px;
+      }
+
+      input:focus {
+        border-bottom: 2px solid #1a237e;
+      }
+
+      /* PLACEHOLDER */
+      input::-webkit-input-placeholder {
+        font-size: 0.65rem;
+      }
+
+      input::placeholder,
+      input::-moz-placeholder {
+        font-size: 0.65rem;
+      }
+
+      input:focus::-webkit-input-placeholder {
+        transform: translate(-0.2px, -20px);
+        transition: transform 0.5s ease;
+      }
+      /* input::-moz-placeholder:focus */
+      input::placeholder:focus {
+        transform: translate(-0.2px, -20px);
+        transition: transform 0.5s ease;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .colunas2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .detalhes {
+        color: red;
+      }
+
+      /* Botao */
+
+      .btn {
+        font-size: 1rem;
+        background: #2e7d32;
+        color: #fff;
+        padding: 10px;
+        margin-top: 0.625rem;
+        border: 0;
+        box-shadow: 0px 0px 1px #888;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn-del {
+        background: red;
+      }
+
+      .btn-edit {
+        background: green;
+      }
+
+      #btnCalcular {
+        font-size: 1rem;
+        background: #3f51b5;
+        color: #fff;
+        padding: 10px;
+        margin-top: 0.625rem;
+        border: 0;
+        box-shadow: 0px 0px 1px #888;
+        border-radius: 5px;
+      }
+
+      #btnCalcular:hover {
+        cursor: pointer;
+        background: #1a237e;
+        transition: background 0.5s ease;
+      }
+
+      #dados {
+        margin: 1rem 0;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ececec;
+      }
+
+      th {
+        background: #8c9eff;
+      }
+
+      th,
+      tr,
+      td {
+        border: 1px solid #ececec;
+        height: 2rem;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      @media (max-width: 480px) {
+        section {
+          width: 100%;
+        }
+      }
+
+      /* Mensagens */
+
+      .alert {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 8px;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+
+      .alert-info {
+        background-color: #2196f3;
+      }
+
+      .alert-success {
+        background-color: #4caf50;
+      }
+
+      .alert-danger {
+        background-color: #f44336;
+      }
+
+      .alert-warning {
+        background-color: #ff5722;
+      }
+
+      .formApagarEditar {
+        background: #ccc;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        border-radius: 8px;
+      }
+
+      .formApagarEditar h2 {
+        text-align: center;
+        margin: 1rem;
+      }
+
+      /* janela modal */
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #00000090;
+        opacity: 0;
+        z-index: -1;
+      }
+
+      .modal.active {
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .modal-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 60vw;
+        margin: 15vh auto;
+        padding-bottom: 20px;
+        background-color: white;
+        box-shadow: 1px 1px 10px black;
+        border-radius: 8px;
+      }
+
+      .modal-header {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1rem;
+      }
+
+      .modal-close {
+        position: absolute;
+        right: 0;
+        display: block;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        user-select: none;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+
+      .modal-close:hover {
+        background-color: #ff4949;
+        color: white;
+      }
+
+      .modal-footer {
+        background-color: inherit;
+        text-align: right;
+        padding: 0 20px;
+      }
+
+      @media (max-width: 480px) {
+        .modal {
+          top: 100%;
+          transition: all 1s ease;
+        }
+        .modal.active {
+          top: 0;
+        }
+        .modal-content {
+          margin: 25% auto;
+          width: 95%;
+          position: fixed;
+        }
+      }
+
+      /* div da mensagem Modal */
+      #mensagemModal {
+        margin: 1rem;
+        text-align: center;
+      }
+
+      #sim {
+        background: #2e7d32;
+      }
+
+      .ocultar {
+        display: none;
+      }
+
+      .mostrar {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="tela-principal">
+      <section id="conteudos">
+        <h1>Calculadora de IMC</h1>
+        <form action="" method="post" id="formulario">
+          <div id="mensagem"></div>
+
+          <div class="form-group">
+            <label for="idPessoa">ID</label>
+            <input
+              type="number"
+              name="idPessoa"
+              id="idPessoa"
+              placeholder="ID"
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="nome">Nome <span class="detalhes">*</span> </label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Nome"
+              autofocus
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="idade">Idade <span class="detalhes">*</span> </label>
+            <input
+              type="number"
+              name="idade"
+              id="idade"
+              min="1"
+              max="120"
+              step="1"
+              placeholder="Idade"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="peso">Peso <span class="detalhes">*</span></label>
+            <input
+              type="number"
+              name="peso"
+              id="peso"
+              min="1.0"
+              max="600.0"
+              step="0.1"
+              placeholder="Peso"
+              required
+            />
+            <!-- 1kg a 597 kg -->
+          </div>
+
+          <div class="form-group">
+            <label for="altura">Altura <span class="detalhes">*</span></label>
+            <input
+              type="number"
+              name="altura"
+              id="altura"
+              min="0.30"
+              max="3.00"
+              step="0.01"
+              placeholder="Altura"
+              required
+            />
+            <!-- 0.47 metros a 3 metros -->
+          </div>
+
+          <div class="form-group">
+            <button
+              type="submit"
+              id="btnCalcular"
+              class="btn"
+              name="btnCalcular"
+            >
+              Calcular
+            </button>
+          </div>
+        </form>
+
+        <!-- JANELA MODAL -->
+        <div class="modal" id="modal">
+          <div class="modal-content">
+            <header class="modal-header">
+              <h2 id="titulo"></h2>
+              <span class="modal-close" id="modalClose">&#10006;</span>
+            </header>
+            <div id="mensagemModal"></div>
+            <footer class="modal-footer" id="botoesModal">
+              <button id="sim" class="btn btn-edit">Sim</button>
+              <button id="nao" class="btn btn-del">Não</button>
+            </footer>
+          </div>
+        </div>
+        <!-- FIM JANELA MODAL -->
+
+        <!-- editar e apagar -->
+        <div class="formApagarEditar">
+          <h2>Digite o id para Apagar ou Editar o registro</h2>
+          <form method="POST" id="formApagarEditar">
+            <div class="colunas2">
+              <div class="form-group">
+                <button
+                  type="submit"
+                  id="btnApagar"
+                  class="btn btn-del"
+                  name="btnApagar"
+                >
+                  Apagar
+                </button>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="number"
+                  name="id"
+                  id="id"
+                  min="0"
+                  max="999"
+                  step="1"
+                  placeholder="ID"
+                />
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="submit"
+                  id="btnEditar"
+                  class="btn btn-edit"
+                  name="btnEditar"
+                >
+                  Editar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- view -->
+        <div id="dados">
+          <!-- tabela -->
+        </div>
+      </section>
+    </main>
+    <script type="module" src="teste.js"></script>
+  </body>
+</html>
